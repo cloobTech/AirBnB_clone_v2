@@ -8,6 +8,8 @@ if ! command -v nginx &> /dev/null; then
 fi
 
 # Create necessary directories
+sudo mkdir -p /data
+sudo mkdir -p /data/web_static
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared/
 sudo chown -R ubuntu:ubuntu /data/
