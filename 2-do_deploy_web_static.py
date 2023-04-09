@@ -11,6 +11,7 @@ env.user = 'ubuntu'
 env.hosts = ['100.24.74.137', '54.209.138.65']
 env.key_filename = '~/.ssh/id_rsa'
 
+
 def do_deploy(archive_path):
     """distributes an archive to your web servers"""
 
@@ -27,7 +28,7 @@ def do_deploy(archive_path):
     # Create release directory and uncompress archive
     run('mkdir -p /data/web_static/releases/{}'.format(filename))
     run('tar -xzf /tmp/{} -C /data/web_static/releases/{}/'
-           .format(os.path.basename(archive_path), filename))
+          .format(os.path.basename(archive_path), filename))
 
     # Delete archive from server
     run('rm /tmp/{}'.format(os.path.basename(archive_path)))
@@ -38,7 +39,8 @@ def do_deploy(archive_path):
     run('rm -rf /data/web_static/current')
 
     # Create new symlink
-    run('ln -s /data/web_static/releases/{}/ /data/web_static/current'.format(filename))
+    run('ln -s /data/web_static/releases/{}/ /data/web_static/current'
+    .format(filename))
 
     print("New version deployed!")
     return True
