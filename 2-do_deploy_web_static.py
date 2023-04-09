@@ -8,8 +8,8 @@ import os
 
 # Set environment variables
 env.user = 'ubuntu'
-env.hosts = ['100.24.74.137', '54.209.138.65'] # IP addresses of your servers
-env.key_filename = '~/.ssh/id_rsa' # SSH key file
+env.hosts = ['100.24.74.137', '54.209.138.65']
+env.key_filename = '~/.ssh/id_rsa'
 
 def do_deploy(archive_path):
     """distributes an archive to your web servers"""
@@ -26,7 +26,8 @@ def do_deploy(archive_path):
 
     # Create release directory and uncompress archive
     run('mkdir -p /data/web_static/releases/{}'.format(filename))
-    run('tar -xzf /tmp/{} -C /data/web_static/releases/{}/'.format(os.path.basename(archive_path), filename))
+    run('tar -xzf /tmp/{} -C /data/web_static/releases/{}/'
+           .format(os.path.basename(archive_path), filename))
 
     # Delete archive from server
     run('rm /tmp/{}'.format(os.path.basename(archive_path)))
@@ -41,4 +42,3 @@ def do_deploy(archive_path):
 
     print("New version deployed!")
     return True
-
