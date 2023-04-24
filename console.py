@@ -1,21 +1,3 @@
-
-devdekunle
-/
-AirBnB_clone_v2
-Public
-forked from cloobTech/AirBnB_clone_v2
-Code
-Pull requests
-Actions
-Projects
-Security
-Insights
-Beta Try the new code view
-AirBnB_clone_v2/console.py
-@devdekunle
-devdekunle edit error in console
- 4 contributors
-Executable File  348 lines (286 sloc)  11 KB
 #!/usr/bin/python3
 """ Console Module """
 import cmd
