@@ -1,3 +1,21 @@
+
+devdekunle
+/
+AirBnB_clone_v2
+Public
+forked from cloobTech/AirBnB_clone_v2
+Code
+Pull requests
+Actions
+Projects
+Security
+Insights
+Beta Try the new code view
+AirBnB_clone_v2/console.py
+@devdekunle
+devdekunle edit error in console
+ 4 contributors
+Executable File  348 lines (286 sloc)  11 KB
 #!/usr/bin/python3
 """ Console Module """
 import cmd
@@ -38,7 +56,6 @@ class HBNBCommand(cmd.Cmd):
 
     def precmd(self, line):
         """Reformat command line for advanced command syntax.
-
         Usage: <class name>.<command>([<id> [<*args> or <**kwargs>]])
         (Brackets denote optional fields in usage example.)
         """
@@ -130,12 +147,12 @@ class HBNBCommand(cmd.Cmd):
             try:
                 key, value = attr.split('=')
                 if value.startswith('"') and value.endswith('"'):
-                    value: str = value[1:-1].replace('_', ' ').replace('\\"', '"')
+                    value = value[1:-1].replace('_', ' ').replace('\\"', '"')
 
                 elif '.' in value:
-                    value: float = float(value)
+                    value = float(value)
                 else:
-                    value: int = int(value)
+                    value = int(value)
                 cls_attr[key] = value
             except:
                 continue
